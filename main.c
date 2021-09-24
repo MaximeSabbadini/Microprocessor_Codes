@@ -1,6 +1,40 @@
 #include <stdio.h>
+#include "stats.h"
 
 #define size 40
+
+int main(){
+    
+    int max, min, median;
+    float mean;
+
+    unsigned char array[size] = {34, 201, 190, 154, 8, 194, 2, 6, 114, 88, 45, 76, 123, 87, 25, 23, 200, 122, 150, 90, 92, 87, 177,244,201, 6, 12, 60, 8, 2, 5, 67,7, 87,250,230, 99, 3,100, 90};
+
+    //mean(array, size);
+    //sort_array(array, size);
+    //print_array(array, size);
+    //maximum = find_maximum(array);
+    //minimum = find_minimum(array);
+    //median = find_median(array);
+    printf("Before sort \n");
+    print_array(array, size);
+    printf("After sort \n");
+    sort_array(array, size);
+    print_array(array, size);
+    mean = find_mean(array, size);
+    printf("Average is : %f\n", mean);
+
+    max = find_maximum(array, size);
+    printf("Maximum is : %d\n", max);
+    min = find_minimum(array, size);
+    printf("Minimum is : %d\n", min);
+    median = find_median(array, size);
+    printf("Median is : %d\n", median);
+    //print_statistics(median, mean, maximum, minimum)
+    
+
+return 0;
+}
 
 void print_array(unsigned char *array, char s){
     int i;
@@ -69,39 +103,6 @@ int find_median(unsigned char test[], char s){
         median = test[(s-1)/2];
     }
     return median;
-}
-
-int main(){
-    
-    int max, min, median;
-    float mean;
-
-    unsigned char array[size] = {34, 201, 190, 154, 8, 194, 2, 6, 114, 88, 45, 76, 123, 87, 25, 23, 200, 122, 150, 90, 92, 87, 177,244,201, 6, 12, 60, 8, 2, 5, 67,7, 87,250,230, 99, 3,100, 90};
-
-    //mean(array, size);
-    //sort_array(array, size);
-    //print_array(array, size);
-    //maximum = find_maximum(array);
-    //minimum = find_minimum(array);
-    //median = find_median(array);
-    printf("Before sort \n");
-    print_array(array, size);
-    printf("After sort \n");
-    sort_array(array, size);
-    print_array(array, size);
-    mean = find_mean(array, size);
-    printf("Average is : %f\n", mean);
-
-    max = find_maximum(array, size);
-    printf("Maximum is : %d\n", max);
-    min = find_minimum(array, size);
-    printf("Minimum is : %d\n", min);
-    median = find_median(array, size);
-    printf("Median is : %d\n", median);
-    //print_statistics(median, mean, maximum, minimum)
-    
-
-return 0;
 }
 
 
